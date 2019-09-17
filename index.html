@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="../css/bootstrap.min.css?6.0.0" rel="stylesheet">
+
+</head>
+
+<body style="padding: 5%">
+
+  <div id="a1">
+
+  <div class="btn-group" data-toggle="buttons" id="GrpClasscn">
+    <label class="btn btn-primary active" @click="Classf('AA')" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip on AA">
+      <input type="radio" id="CAA"  name="options" autocomplete="off" checked> AA
+    </label>
+    <label class="btn btn-primary" @click="Classf('A')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on A">
+      <input type="radio" id="CA"  name="options" autocomplete="off"> A
+    </label>   <label class="btn btn-primary" @click="Classf('B')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on B">
+      <input type="radio" id="CB"  name="options" autocomplete="off"> B
+    </label>
+    <label class="btn btn-primary" @click="Classf('C')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on C">
+      <input type="radio" id="CC"  name="options" autocomplete="off"> C
+    </label>
+  </div>
+
+
+
+  </div>
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/gritter/js/jquery.gritter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script>
+
+      let a = new Vue({
+        el: "#a1",
+        data:
+        {
+          clasificacion: '',
+          territorio : '',
+        },
+        methods:
+        {
+          Classf( option )
+          {
+            this.clasificacion = option
+
+            $('[data-toggle="tooltip"]').tooltip({
+            trigger : 'click'
+            })  
+            
+
+            setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 3000);
+
+
+            switch (option) {
+              case 'AA':
+                console.log("Entra al AA")
+                
+              break;
+
+              
+              case 'A':
+                console.log("Entra al A")
+              break; 
+              
+              case 'B':
+                console.log("Entra al B")
+              break;
+            
+              case 'C':
+                console.log("Entra al C")
+              break;
+
+            }
+          },
+
+        }
+      })
+
+    </script>
+
+    <script>
+      
+
+
+
+/*       $(document).ready(function(){
+        $(".btn-primary").click(function(){
+          $("[data-toggle='tooltip']").tooltip('show');
+        });
+
+        setTimeout(function(){ $("[data-toggle='tooltip']").tooltip('hide'); }, 3000);
+          
+
+      }); */
+
+
+      $(document).ready(function(){
+
+      })
+    
+    
+    </script>
+
+</body>
+</html>
