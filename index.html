@@ -13,7 +13,7 @@
 
   <div id="a1">
 
-  <div class="btn-group" data-toggle="buttons" id="GrpClasscn">
+  <div class="btn-group" data-toggle="buttons" id="GrpClasscn" style="padding: 2.5%; margin: 2.5%">
     <label class="btn btn-primary active" @click="Classf('AA')" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip on AA">
       <input type="radio" id="CAA"  name="options" autocomplete="off" checked> AA
     </label>
@@ -27,10 +27,29 @@
     </label>
   </div>
 
+  <div class="form-group" style="padding: 2.5%; margin: 2.5%">
+      <label class="inline2">Territory:</label>
+            <label  class="inline2" >
+              <input type="radio" v-model="territory" value="North" data-toggle="tooltip" title="North">
+            North</label>
 
+            <label class="inline2">
+              <input type="radio" v-model="territory" value="South" data-toggle="tooltip" title="North">
+            South</label>
+
+            <label class="inline2">
+              <input type="radio" v-model="territory" value="East" data-toggle="tooltip" title="North">
+            East</label>
+
+            <label class="inline2">
+              <input type="radio" v-model="territory" value="West" data-toggle="tooltip" title="North">
+            West</label>
+    </div>
+    <div>{{territory}}</div>
 
   </div>
 
+    <script src="./js/popper.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./lib/gritter/js/jquery.gritter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -42,6 +61,7 @@
         data:
         {
           clasificacion: '',
+          territory: '',
         },
         methods:
         {
@@ -85,25 +105,15 @@
     </script>
 
     <script>
+
+      $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'click',
+        placement: 'bottom',
+        function(){ return alert("Prueba") }
+      }); 
+
       
-
-
-
-/*       $(document).ready(function(){
-        $(".btn-primary").click(function(){
-          $("[data-toggle='tooltip']").tooltip('show');
-        });
-
-        setTimeout(function(){ $("[data-toggle='tooltip']").tooltip('hide'); }, 3000);
           
-
-      }); */
-
-
-      $(document).ready(function(){
-
-      })
-    
     
     </script>
 
