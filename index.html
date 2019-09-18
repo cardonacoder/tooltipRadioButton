@@ -14,42 +14,21 @@
   <div id="a1">
 
   <div class="btn-group" data-toggle="buttons" id="GrpClasscn" style="padding: 2.5%; margin: 2.5%">
-    <label class="btn btn-primary active" @click="Classf('AA')" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip on AA">
-      <input type="radio" id="CAA"  name="options" autocomplete="off" checked> AA
+    <label class="btn btn-primary" @click="Classf('AA')" data-toggle="tooltip" data-placement="left" data-original-title="Mayor a 2M">
+      <input type="radio" id="CAA"  name="options" autocomplete="off"> AA
     </label>
-    <label class="btn btn-primary" @click="Classf('A')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on A">
+    <label class="btn btn-primary" @click="Classf('A')" data-toggle="tooltip" data-placement="left"  data-original-title="Entre 2M y 1M">
       <input type="radio" id="CA"  name="options" autocomplete="off"> A
-    </label>   <label class="btn btn-primary" @click="Classf('B')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on B">
+    </label>   <label class="btn btn-primary" @click="Classf('B')" data-toggle="tooltip" data-placement="left"  data-original-title="Entre 1M y 500">
       <input type="radio" id="CB"  name="options" autocomplete="off"> B
     </label>
-    <label class="btn btn-primary" @click="Classf('C')" data-toggle="tooltip" data-placement="right"  data-original-title="Tooltip on C">
+    <label class="btn btn-primary" @click="Classf('C')" data-toggle="tooltip" data-placement="left"  data-original-title="Menor a 500">
       <input type="radio" id="CC"  name="options" autocomplete="off"> C
     </label>
   </div>
-
-  <div class="form-group" style="padding: 2.5%; margin: 2.5%">
-      <label class="inline2">Territory:</label>
-            <label  class="inline2" >
-              <input type="radio" v-model="territory" value="North" data-toggle="tooltip" title="North">
-            North</label>
-
-            <label class="inline2">
-              <input type="radio" v-model="territory" value="South" data-toggle="tooltip" title="North">
-            South</label>
-
-            <label class="inline2">
-              <input type="radio" v-model="territory" value="East" data-toggle="tooltip" title="North">
-            East</label>
-
-            <label class="inline2">
-              <input type="radio" v-model="territory" value="West" data-toggle="tooltip" title="North">
-            West</label>
-    </div>
-    <div>{{territory}}</div>
+  <div>{{clasificacion}}</div>
 
   </div>
-
-    <script src="./js/popper.js"></script>
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript" src="./lib/gritter/js/jquery.gritter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -61,7 +40,6 @@
         data:
         {
           clasificacion: '',
-          territory: '',
         },
         methods:
         {
@@ -70,33 +48,11 @@
             this.clasificacion = option
 
             $('[data-toggle="tooltip"]').tooltip({
-            trigger : 'click'
+              trigger : 'click'
             })  
             
+            setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 1000);
 
-            setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 3000);
-
-
-            switch (option) {
-              case 'AA':
-                console.log("Entra al AA")
-                
-              break;
-
-              
-              case 'A':
-                console.log("Entra al A")
-              break; 
-              
-              case 'B':
-                console.log("Entra al B")
-              break;
-            
-              case 'C':
-                console.log("Entra al C")
-              break;
-
-            }
           },
 
         }
