@@ -14,15 +14,15 @@
   <div id="a1">
 
   <div class="btn-group" data-toggle="buttons" id="GrpClasscn" style="padding: 2.5%; margin: 2.5%">
-    <label class="btn btn-primary" @click="Classf('AA')" data-toggle="tooltip" data-placement="left" data-original-title="Mayor a 2M">
+    <label class="btn btn-primary" @click="Classf('AA')" data-toggle="tooltip" data-placement="left" title="Mayor a 2M">
       <input type="radio" id="CAA"  name="options" autocomplete="off"> AA
     </label>
-    <label class="btn btn-primary" @click="Classf('A')" data-toggle="tooltip" data-placement="left"  data-original-title="Entre 2M y 1M">
+    <label class="btn btn-primary" @click="Classf('A')" data-toggle="tooltip" data-placement="left"  title="Entre 2M y 1M">
       <input type="radio" id="CA"  name="options" autocomplete="off"> A
-    </label>   <label class="btn btn-primary" @click="Classf('B')" data-toggle="tooltip" data-placement="left"  data-original-title="Entre 1M y 500">
+    </label>   <label class="btn btn-primary" @click="Classf('B')" data-toggle="tooltip" data-placement="left"  title="Entre 1M y 500">
       <input type="radio" id="CB"  name="options" autocomplete="off"> B
     </label>
-    <label class="btn btn-primary" @click="Classf('C')" data-toggle="tooltip" data-placement="left"  data-original-title="Menor a 500">
+    <label class="btn btn-primary" @click="Classf('C')" data-toggle="tooltip" data-placement="left"  title="Menor a 500">
       <input type="radio" id="CC"  name="options" autocomplete="off"> C
     </label>
   </div>
@@ -46,13 +46,7 @@
           Classf( option )
           {
             this.clasificacion = option
-
-            $('[data-toggle="tooltip"]').tooltip({
-              trigger : 'click'
-            })  
-            
             setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 1000);
-
           },
 
         }
@@ -65,12 +59,8 @@
       $('[data-toggle="tooltip"]').tooltip({
         trigger: 'click',
         placement: 'bottom',
-        function(){ return alert("Prueba") }
       }); 
 
-      
-          
-    
     </script>
 
 </body>
